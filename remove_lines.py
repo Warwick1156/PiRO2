@@ -27,3 +27,12 @@ def remove_lines(img):
     gray = erode(gray, 20)
     gray = dilate(gray, 10)
     return gray
+
+bina = to_binary(img, 11, 3)
+bina = dilate(erode(bina, 12),8)
+
+bina = bina[1500:5000, 500:3500]
+debug_plot_cv_img(bina, cmap='gray')
+
+img2 = remove_lines(bina)
+debug_plot_cv_img(img2, cmap='gray')
