@@ -1,9 +1,10 @@
 import sys
 import os
-import skimage.io as io
 
 from OCR import *
 
+from PIL import Image
+import cv2 as cv
 
 class PiRO2:
 
@@ -20,12 +21,12 @@ class PiRO2:
         print("Processed image no. {}".format(k))
 
         self._save_result(k, indices, processed_img)
-        print("Saved result of processing image no. {}".format(k))
+        print("Saved result of processing image no. {}\n".format(k))
 
     def _load_image(self, k):
         suffix = '.png'
         filepath = os.path.join(self.input_path, str(k) + suffix)
-        img = io.imread(filepath, as_gray=False)
+        img = Image.open(filepath)
 
         return img
 
@@ -40,7 +41,7 @@ class PiRO2:
         img_filepath = os.path.join(self.output_path, str(k) + '.png')
         ind_filepath = os.path.join(self.output_path, str(k) + '.txt')
 
-        io.imsave(img_filepath, processed_img)
+        cv.imwrite(img_filepath, processed_img)
 
         with open(ind_filepath, "w") as f:
             f.write("\n".join(indices))

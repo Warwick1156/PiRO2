@@ -5,7 +5,6 @@ from MNISTClassifier import *
 class OCR:
 
     def __init__(self):
-        self.preprocessor = Preprocessor()
         self.row_splitter = RowSplitter()
         self.words_detector = None
         self.digits_extractor = None
@@ -13,8 +12,9 @@ class OCR:
 
     def process_image(self, image):
 
-        # self.preprocessor
-        # ...
+        print("Preprocessing image...")
+        image = Preprocessor.process(image)
+        print("Preprocessing done!")
 
         # self.row_splitter
         # ...
@@ -25,6 +25,5 @@ class OCR:
         # ...
 
         ind = ["00000", "11111", "22222"]
-        processed_image = image
 
-        return ind, processed_image
+        return ind, image
