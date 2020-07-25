@@ -2,3 +2,6 @@
 
 data/MNIST
 out/
+
+venv/
+PySolution/__pycache__
