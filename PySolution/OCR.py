@@ -14,13 +14,13 @@ class OCR:
         print("Preprocessing image...")
         image = Preprocessor.process(image)
 
-        print("Splitting rows...")
-        rows = BoundingBoxSplitter.split_rows(image)
-        print("Detected " + str(len(rows)) + " rows.")
+        # print("Splitting rows...")
+        # rows = BoundingBoxSplitter.split_rows(image)
+        # print("Detected " + str(len(rows)) + " rows.")
 
         # self.mnist_classifier
         # ...
 
         ind = ["00000", "11111", "22222"]
 
-        return ind, rows
+        return ind, image
