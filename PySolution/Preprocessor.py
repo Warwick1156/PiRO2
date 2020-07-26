@@ -48,14 +48,14 @@ class Preprocessor:
     def remove_lines(img):
         gray = img.copy()
 
-        horizontal_kernel = cv.getStructuringElement(cv.MORPH_RECT, (96, 1))
+        horizontal_kernel = cv.getStructuringElement(cv.MORPH_RECT, (80, 1))
         h_lines = 255 - cv.filter2D(gray, 0, horizontal_kernel)
 
-        vertical_kernel = cv.getStructuringElement(cv.MORPH_RECT, (1, 96))
+        vertical_kernel = cv.getStructuringElement(cv.MORPH_RECT, (1, 80))
         v_lines = 255 - cv.filter2D(gray, 0, vertical_kernel)
 
         mask1 = v_lines + h_lines
-        mask1 = Preprocessor.dilate(mask1, 6)
+        mask1 = Preprocessor.dilate(mask1, 4)
 
         gray = Preprocessor.erode(Preprocessor.dilate(np.invert(gray), 4), 4)
         gray = gray - mask1

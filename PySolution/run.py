@@ -38,10 +38,18 @@ class PiRO2:
         return ind, img
 
     def _save_result(self, k, indices, processed_img):
+
         img_filepath = os.path.join(self.output_path, str(k) + '.png')
         ind_filepath = os.path.join(self.output_path, str(k) + '.txt')
 
-        cv.imwrite(img_filepath, processed_img)
+
+        # WARNING TEST
+        print("Rows detected: " + str(len(processed_img)))
+        for i in range(len(processed_img)):
+            img_filepath = os.path.join(self.output_path, str(k) + "_" + str(i) + '.png')
+            cv.imwrite(img_filepath, processed_img[i])
+
+        # cv.imwrite(img_filepath, processed_img)
 
         with open(ind_filepath, "w") as f:
             f.write("\n".join(indices))
