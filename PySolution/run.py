@@ -44,7 +44,6 @@ class PiRO2:
 
 
         # WARNING TEST
-        print("Rows detected: " + str(len(processed_img)))
         for i in range(len(processed_img)):
             img_filepath = os.path.join(self.output_path, str(k) + "_" + str(i) + '.png')
             cv.imwrite(img_filepath, processed_img[i])

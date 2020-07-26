@@ -1,5 +1,5 @@
 from Preprocessor import *
-from RowSplitter import *
+from BoundingBoxSplitter import *
 from MNISTClassifier import *
 
 class OCR:
@@ -15,12 +15,12 @@ class OCR:
         image = Preprocessor.process(image)
 
         print("Splitting rows...")
-        # image = Preprocessor.dilate(image, 3)
-        image = RowSplitter.split_rows(image, threshold=4, show_rows=True, offset=150)
+        rows = BoundingBoxSplitter.split_rows(image)
+        print("Detected " + str(len(rows)) + " rows.")
 
         # self.mnist_classifier
         # ...
 
         ind = ["00000", "11111", "22222"]
 
-        return ind, image
+        return ind, rows

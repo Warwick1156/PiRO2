@@ -10,18 +10,19 @@ class Preprocessor:
         return cv.fastNlMeansDenoising(img, output, strength, templateWindowSize, searchWindowSize)
 
     @staticmethod
-    def erode(img, kernel_size=2):
-        kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (kernel_size, kernel_size))
-        return cv.erode(img, kernel)
+    def dilate(img, kernel_size=2, kernel=None):
+        kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (kernel_size, kernel_size)) if kernel is None else kernel
+        return cv.dilate(img, kernel)
 
     @staticmethod
-    def dilate(img, kernel_size=2):
-        kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (kernel_size, kernel_size))
-        return cv.dilate(img, kernel)
+    def erode(img, kernel_size=2, kernel=None):
+        kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (kernel_size, kernel_size)) if kernel is None else kernel
+        return cv.erode(img, kernel)
 
     @staticmethod
     def to_binary(img, block_size=11, constant=2):
         gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+        gray = cv.GaussianBlur(gray, (3, 3), 0)
         binary = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, block_size, constant)
         return binary
 
@@ -48,21 +49,24 @@ class Preprocessor:
     def remove_lines(img):
         gray = img.copy()
 
-        horizontal_kernel = cv.getStructuringElement(cv.MORPH_RECT, (80, 1))
+        horizontal_kernel = cv.getStructuringElement(cv.MORPH_RECT, (72, 1))
         h_lines = 255 - cv.filter2D(gray, 0, horizontal_kernel)
 
-        vertical_kernel = cv.getStructuringElement(cv.MORPH_RECT, (1, 80))
+        vertical_kernel = cv.getStructuringElement(cv.MORPH_RECT, (1, 72))
         v_lines = 255 - cv.filter2D(gray, 0, vertical_kernel)
 
         mask1 = v_lines + h_lines
-        mask1 = Preprocessor.dilate(mask1, 4)
+        mask1 = Preprocessor.dilate(mask1, 12)
 
-        gray = Preprocessor.erode(Preprocessor.dilate(np.invert(gray), 4), 4)
+        gray = np.invert(gray)
+        # gray = Preprocessor.erode(Preprocessor.dilate(gray, 4), 4)
         gray = gray - mask1
         gray = np.invert(gray)
         gray = Preprocessor.dilate(gray, 8)
-        gray = Preprocessor.erode(gray, 20)
-        gray = Preprocessor.dilate(gray, 10)
+        gray = Preprocessor.erode(gray, 8)
+
+        gray = Preprocessor.erode(gray, 8)
+        gray = Preprocessor.dilate(gray, 8)
         return gray
 
     @staticmethod

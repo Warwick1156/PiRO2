@@ -1,6 +1,7 @@
 import sys
 import numpy as np
 import cv2 as cv
+import cv2
 from matplotlib import pyplot as plt
 import imutils
 
@@ -40,10 +41,10 @@ class RowSplitter:
         return cv.minAreaRect(pts)
 
     @staticmethod
-    def rotate_text(text_aera, binary_image):
+    def rotate_text(text_aera, binary_image, angle_offset=90):
         (cx, cy), (w, h), ang = text_aera
 
-        M = cv.getRotationMatrix2D((cx, cy), ang+90, scale=1.0)
+        M = cv.getRotationMatrix2D((cx, cy), ang + angle_offset, scale=1.0)
         # rotated = cv.warpAffine(binary_image, M, (img.shape[1], img.shape[0]))
         rotated = cv.warpAffine(binary_image, M, (binary_image.shape[1], binary_image.shape[0]))
         return rotated
@@ -68,16 +69,20 @@ class RowSplitter:
         return rows
 
     @staticmethod
-    def split_rows(binary_image, plot=True, threshold=2, show_rows=False, offset=0):
+    def split_rows(binary_image, plot=True, threshold=2, show_rows=False, offset=0, angle_offset=90):
 
         print("Getting text area...")
         orig_image = binary_image.copy()
         binary_image = Preprocessor.dilate(binary_image, 20)
-        binary_image = Preprocessor.erode(binary_image, 4)
+        binary_image = Preprocessor.erode(binary_image, 10)
         aera = RowSplitter.get_text_aera(binary_image)
 
         print("Rotating text area...")
-        rotated = RowSplitter.rotate_text(aera, binary_image)
+        rotated = RowSplitter.rotate_text(aera, binary_image, angle_offset)
+        cv2.imshow("", rotated)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
         orig_image_rotated = RowSplitter.rotate_text(aera, orig_image)
         rotated = np.invert(rotated)
 
