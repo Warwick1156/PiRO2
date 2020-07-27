@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a6f5e6f-aa03-4a4d-890d-97c85a7e54cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PySolution/BoundingBoxSplitter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PySolution/DigitsExtractor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PySolution/WordsExtractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/BoundingBoxSplitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/BoundingBoxSplitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/MNISTClassifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/MNISTClassifier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PySolution/OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/OCR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PySolution/Preprocessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/Preprocessor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/RowSplitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/RowSplitter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/0.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ipynb/Row split.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ipynb/Row split.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +67,13 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a6f5e6f-aa03-4a4d-890d-97c85a7e54cc" name="Default Changelist" comment="" />
+      <created>1595881685592</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595881685592</updated>
+    </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
@@ -82,22 +89,22 @@
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
     <state x="4299" y="490" width="495" height="484" key="FileChooserDialogImpl/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595760134946" />
-    <state width="1664" height="397" key="GridCell.Tab.0.bottom" timestamp="1595784903769">
+    <state width="1644" height="396" key="GridCell.Tab.0.bottom" timestamp="1595886054464">
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
-    <state width="1664" height="397" key="GridCell.Tab.0.bottom/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595784903769" />
-    <state width="1664" height="397" key="GridCell.Tab.0.center" timestamp="1595784903768">
+    <state width="1644" height="396" key="GridCell.Tab.0.bottom/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595886054464" />
+    <state width="1644" height="396" key="GridCell.Tab.0.center" timestamp="1595886054464">
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
-    <state width="1664" height="397" key="GridCell.Tab.0.center/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595784903768" />
-    <state width="1664" height="397" key="GridCell.Tab.0.left" timestamp="1595784903768">
+    <state width="1644" height="396" key="GridCell.Tab.0.center/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595886054463" />
+    <state width="1644" height="396" key="GridCell.Tab.0.left" timestamp="1595886054463">
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
-    <state width="1664" height="397" key="GridCell.Tab.0.left/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595784903768" />
-    <state width="1664" height="397" key="GridCell.Tab.0.right" timestamp="1595784903768">
+    <state width="1644" height="396" key="GridCell.Tab.0.left/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595886054463" />
+    <state width="1644" height="396" key="GridCell.Tab.0.right" timestamp="1595886054464">
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
-    <state width="1664" height="397" key="GridCell.Tab.0.right/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595784903768" />
+    <state width="1644" height="396" key="GridCell.Tab.0.right/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595886054464" />
     <state width="1664" height="488" key="GridCell.Tab.1.bottom" timestamp="1595761803512">
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
@@ -122,5 +129,9 @@
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
     <state x="4288" y="647" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595762567886" />
+    <state x="3773" y="127" width="1467" height="1213" key="dock-window-1" timestamp="1595885823026">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state x="3773" y="127" width="1467" height="1213" key="dock-window-1/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1595885823026" />
   </component>
 </project>

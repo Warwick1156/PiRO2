@@ -2,6 +2,9 @@ from Preprocessor import *
 from BoundingBoxSplitter import *
 from MNISTClassifier import *
 
+from WordsExtractor import *
+from DigitsExtractor import *
+
 class OCR:
 
     def __init__(self):
@@ -14,13 +17,27 @@ class OCR:
         print("Preprocessing image...")
         image = Preprocessor.process(image)
 
-        # print("Splitting rows...")
-        # rows = BoundingBoxSplitter.split_rows(image)
-        # print("Detected " + str(len(rows)) + " rows.")
+        print("Splitting rows...")
+        rows = BoundingBoxSplitter.split_rows(image)
+        print("Detected " + str(len(rows)) + " rows.")
 
-        # self.mnist_classifier
-        # ...
+        clf = MNISTClassifier()
+        clf.from_file("../model/mnist_model.pt")
 
-        ind = ["00000", "11111", "22222"]
+        print("Processing rows...")
+        indices = []
+        for row in rows:
+            words  = WordsExtractor.extract(row)
+            digits = DigitsExtractor.extract(words)
 
-        return ind, image
+            index = []
+            for digit in digits:
+                predicted = clf.predict(digit)
+                index.append(predicted)
+
+            indices.append(index)
+
+        dummy_image = np.zeros((64, 64))
+        processed_image = dummy_image
+
+        return indices, processed_image

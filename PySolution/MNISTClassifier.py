@@ -69,8 +69,11 @@ class MNISTClassifier:
                 print("Validation: {}/{} ({}%)".format(TP, TOTAL, TP * 100 / TOTAL))
 
     def predict(self, image):
+        input_vector = image.reshape((784, )).astype('uint8')
+        var = torch.from_numpy(input_vector)
+
         with torch.no_grad():
-            logps = self.model(image)
+            logps = self.model(var)
 
         ps = torch.exp(logps)
         probab = list(ps.numpy())

@@ -28,6 +28,7 @@ class BoundingBoxSplitter:
         print("Detecting rows with boundary boxes...")
 
         image = image_orig.copy()
+        image = np.invert(image)
 
         image = Preprocessor.erode(image, 16)
         image = Preprocessor.dilate(image, 16)
@@ -63,7 +64,7 @@ class BoundingBoxSplitter:
         return [image, image_orig] # rows
 
     @staticmethod
-    def split_rows(binary_image, angle_offset=90):
+    def split_rows(binary_image, angle_offset=0):
         print("Getting text area...")
         area = BoundingBoxSplitter.get_text_area(binary_image)
 

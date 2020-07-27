@@ -108,5 +108,5 @@ class Preprocessor:
         res = Preprocessor.dilate(res, 12)
         res = Preprocessor.erode(res, 8)
 
-        return [image, image2, lines_removed_img, res]
+        return res #[image, image2, lines_removed_img, res]
 
