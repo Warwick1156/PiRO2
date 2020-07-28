@@ -6,6 +6,7 @@ from OCR import *
 from PIL import Image
 import cv2 as cv
 
+
 class PiRO2:
 
     def __init__(self):
