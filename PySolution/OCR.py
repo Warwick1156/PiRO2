@@ -1,6 +1,6 @@
 from Preprocessor import *
 from BoundingBoxSplitter import *
-from MNISTClassifier import *
+from MNISTKeras import *
 
 from WordsExtractor import *
 from DigitsExtractor import *
@@ -10,25 +10,28 @@ class OCR:
     def __init__(self):
         self.words_detector = None
         self.digits_extractor = None
-        self.mnist_classifier = MNISTClassifier()
 
     def process_image(self, image):
 
         print("Preprocessing image...")
         image = Preprocessor.process(image)
-
+        #
         print("Splitting rows...")
-        rows = BoundingBoxSplitter.split_rows(image)
+        rows, image_orig = BoundingBoxSplitter.split_rows(image)
         print("Detected " + str(len(rows)) + " rows.")
 
-        clf = MNISTClassifier()
-        clf.from_file("../model/mnist_model.pt")
+
+        clf = Classifier("../model/keras_mnist.h5")
 
         print("Processing rows...")
         indices = []
+        test = []
         for row in rows:
             words  = WordsExtractor.extract(row)
             digits = DigitsExtractor.extract(words)
+
+            for d in digits:
+                test.append(d)
 
             index = []
             for digit in digits:
@@ -38,6 +41,7 @@ class OCR:
             indices.append(index)
 
         dummy_image = np.zeros((64, 64))
-        processed_image = dummy_image
 
-        return indices, processed_image
+        indices = ["123"]
+
+        return indices, test

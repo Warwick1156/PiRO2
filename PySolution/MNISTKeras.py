@@ -70,7 +70,7 @@ class Classifier:
         Classifier.evaluate(model, X_test, y_test)
 
         if save:
-            model.save('..\\model\\keras_mnist.h5')
+            model.save('../model/keras_mnist.h5')
 
         return model
 

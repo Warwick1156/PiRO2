@@ -9,6 +9,10 @@ class WordsExtractor:
         kernel_rect = cv.getStructuringElement(cv.MORPH_RECT, (16, 64))
 
         img_copy = row_image.copy()
+        row_image = Preprocessor.dilate(row_image, 4)
+        row_image = Preprocessor.erode(row_image, 2)
+        row_image = cv.GaussianBlur(row_image, (3,3), 1)
+
         img_copy = Preprocessor.erode(img_copy, 4)
         img_copy = Preprocessor.dilate(img_copy, kernel=kernel_rect)
         contours, _ = cv.findContours(img_copy, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)

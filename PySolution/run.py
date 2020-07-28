@@ -49,7 +49,7 @@ class PiRO2:
             img_filepath = os.path.join(self.output_path, str(k) + "_" + str(i) + '.png')
             cv.imwrite(img_filepath, processed_img[i])
 
-        # cv.imwrite(img_filepath, processed_img)
+        # cv.imwrite(img_filepath, processed_img,)
 
         with open(ind_filepath, "w") as f:
             f.write("\n".join(indices))
