@@ -22,11 +22,20 @@ class DigitsExtractor:
             for i, c in enumerate(contours):
                 boundRect = cv.boundingRect(c)
 
-                #             cv.rectangle(row_test, (int(boundRect[0]), int(boundRect[1])), \
-                #                 (int(boundRect[0]+boundRect[2]), int(boundRect[1]+boundRect[3])), (127,127,127), 1)
+                x = boundRect[0]
+                y = boundRect[1]
+                width = boundRect[2]
+                height = boundRect[3]
 
-                digit = word[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
-                digits.append(digit)
+                marginX = 2
+                marginY = 2
+                rect_kernel_size = kernel_rect.shape
+                if width > (rect_kernel_size[0] + marginX) and height > (rect_kernel_size[1] + marginY):
+                    #             cv.rectangle(row_test, (int(boundRect[0]), int(boundRect[1])), \
+                    #                 (int(boundRect[0]+boundRect[2]), int(boundRect[1]+boundRect[3])), (127,127,127), 1)
+
+                    digit = word[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
+                    digits.append(digit)
 
         digits = digits[::-1]
 

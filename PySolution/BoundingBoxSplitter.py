@@ -29,6 +29,7 @@ class BoundingBoxSplitter:
         print("Detecting rows with boundary boxes...")
 
         image = image_orig.copy()
+        image_orig_2 = image_orig.copy()
 
         image = Preprocessor.erode(image, 4)
         image = Preprocessor.dilate(image, 6)
@@ -58,14 +59,14 @@ class BoundingBoxSplitter:
             marginY = 5
 
             if width > (rect_kernel_size[0] + marginX) and height > (rect_kernel_size[1] + marginY):
-                cv.rectangle(image, (int(boundRect[0]), int(boundRect[1])), \
+                cv.rectangle(image_orig_2, (int(boundRect[0]), int(boundRect[1])), \
                     (int(boundRect[0]+boundRect[2]), int(boundRect[1]+boundRect[3])), (127,127,127), 2)
 
-            # UNCOMMENT THIS
-            row = image_orig[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
-            rows.append(row)
+                # UNCOMMENT THIS
+                row = image_orig[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
+                rows.append(row)
 
-        return rows, image_orig
+        return rows, image_orig_2
 
     @staticmethod
     def split_rows(binary_image, angle_offset=90):
