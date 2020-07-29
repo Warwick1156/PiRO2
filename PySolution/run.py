@@ -52,7 +52,8 @@ class PiRO2:
         # cv.imwrite(img_filepath, processed_img,)
 
         with open(ind_filepath, "w") as f:
-            f.write("\n".join(indices))
+            if len(indices) > 0:
+                f.write("\n".join([x for x in indices if x != ""]))
 
     def run(self):
         if len(sys.argv) != 4:
