@@ -15,7 +15,7 @@ class OCR:
 
         print("Preprocessing image...")
         image = Preprocessor.process(image)
-        #
+
         print("Splitting rows...")
         rows, image_orig = BoundingBoxSplitter.split_rows(image)
         print("Detected " + str(len(rows)) + " rows.")
@@ -30,8 +30,8 @@ class OCR:
             words  = WordsExtractor.extract(row)
             digits = DigitsExtractor.extract(words)
 
-            for d in digits:
-                test.append(d)
+            for w in words:
+                test.append(w)
 
             index = []
             for digit in digits:

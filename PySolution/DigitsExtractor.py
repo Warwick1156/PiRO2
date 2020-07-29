@@ -17,7 +17,7 @@ class DigitsExtractor:
             word_copy = word.copy()
             word_copy = Preprocessor.erode(word_copy, 4)
             word_copy = Preprocessor.dilate(word_copy, kernel=kernel_rect)
-            contours, _ = cv.findContours(word_copy, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+            contours, _ = cv.findContours(word_copy, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 
             for i, c in enumerate(contours):
                 boundRect = cv.boundingRect(c)
@@ -27,8 +27,8 @@ class DigitsExtractor:
                 width = boundRect[2]
                 height = boundRect[3]
 
-                marginX = 2
-                marginY = 2
+                marginX = 0
+                marginY = 0
                 rect_kernel_size = kernel_rect.shape
                 if width > (rect_kernel_size[0] + marginX) and height > (rect_kernel_size[1] + marginY):
                     #             cv.rectangle(row_test, (int(boundRect[0]), int(boundRect[1])), \
