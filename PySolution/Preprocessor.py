@@ -20,13 +20,17 @@ class Preprocessor:
         return cv.erode(img, kernel)
 
     @staticmethod
-    def to_binary(img, block_size=11, constant=2, cast_color=True):
+    def to_binary(img, block_size=11, constant=2, cast_color=True, otsu=False):
         if cast_color:
             gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
         else:
             gray = img
         gray = cv.GaussianBlur(gray, (3, 3), 7)
-        binary = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, block_size, constant)
+        if otsu:
+            ret3, binary = cv.threshold(gray, 0, 255, cv.THRESH_BINARY + cv.THRESH_OTSU)
+        else:
+            binary = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, block_size, constant)
+
         return binary
 
     @staticmethod
@@ -127,6 +131,7 @@ class Preprocessor:
         denoised_img = opencv_img
         # denoised_img = Preprocessor.denoise(opencv_img)
         image = denoised_img
+        # image = image[48:2265, 80:1225, :]
         # image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
 
         # print("Creating mask...")
@@ -145,7 +150,7 @@ class Preprocessor:
         # return [Preprocessor.color_based_to_binary(image, 51, 11)]
 
 
-        image = Preprocessor.to_binary(image, 51, 11)
+        image = Preprocessor.to_binary(image, 51, 11, otsu=False)
 
         image = Preprocessor.dilate(image, 2)
         image = Preprocessor.erode(image, 2)

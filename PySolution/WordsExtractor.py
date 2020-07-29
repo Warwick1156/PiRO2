@@ -7,7 +7,7 @@ class WordsExtractor:
     @staticmethod
     def extract(row_image):
         x, y = row_image.shape
-        kx, ky = (16, 32)
+        kx, ky = (64, 24)
         x = x if x < kx else kx
         y = y if y < ky else ky
         rect_kernel_size = x, y
@@ -45,5 +45,5 @@ class WordsExtractor:
                 word = row_image[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
                 words.append(word)
 
-        return [row_image_cpy]
+        # return [row_image_cpy]
         return words

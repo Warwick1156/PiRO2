@@ -13,6 +13,7 @@ class DigitsExtractor:
 
         # words are in reverse order, so first element is the last word
         # we assume that the 2 first words are name & surname, so we skip it
+        # for word in words_list[:-2]:
         for word in words_list[:-2]:
             word_copy = word.copy()
             word_copy = Preprocessor.erode(word_copy, 4)
@@ -33,9 +34,9 @@ class DigitsExtractor:
                 if width > (rect_kernel_size[0] + marginX) and height > (rect_kernel_size[1] + marginY):
                     #             cv.rectangle(row_test, (int(boundRect[0]), int(boundRect[1])), \
                     #                 (int(boundRect[0]+boundRect[2]), int(boundRect[1]+boundRect[3])), (127,127,127), 1)
-
-                    digit = word[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
-                    digits.append(digit)
+                    pass
+                digit = word[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
+                digits.append(digit)
 
         digits = digits[::-1]
 
