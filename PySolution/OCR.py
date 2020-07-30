@@ -39,9 +39,6 @@ class OCR:
                 predicted = clf.predict(digit)
                 index += (str(predicted))
 
-            for d in digits:
-                test.append(d)
-
             indices.append(index)
 
         # test.append(image)

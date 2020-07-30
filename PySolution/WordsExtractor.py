@@ -40,8 +40,8 @@ class WordsExtractor:
             marginY = 1
 
             if width > (rect_kernel_size[0] + marginX) and height > (rect_kernel_size[1] + marginY):
-                cv.rectangle(image, (int(row_coords[0] + boundRect[0] + 8), int(row_coords[1] + boundRect[1] + 8)),
-                    (int(row_coords[0] + boundRect[0]+boundRect[2]-16), int(row_coords[1] + boundRect[1]+boundRect[3]-16)), (row_no,row_no,row_no), -1)
+                cv.rectangle(image, (int(row_coords[0] + boundRect[0] ), int(row_coords[1] + boundRect[1] )),
+                    (int(row_coords[0] + boundRect[0]+boundRect[2]), int(row_coords[1] + boundRect[1]+boundRect[3])), (row_no,row_no,row_no), -1)
 
                 word = row_image[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
                 words.append((boundRect[0], word))

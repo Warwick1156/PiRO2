@@ -68,7 +68,6 @@ class BoundingBoxSplitter:
 
                 row_coords = (int(boundRect[0]), int(boundRect[1]))
                 row_no = i
-                print(row_coords)
                 rows.append((row, row_coords, row_no))
                 i+=1
 

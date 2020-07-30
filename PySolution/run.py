@@ -44,7 +44,7 @@ class PiRO2:
     def _save_result(self, k, indices, processed_img):
 
         img_filepath = os.path.join(self.output_path, str(k) + '.png')
-        # ind_filepath = os.path.join(self.output_path, str(k) + '.txt')
+        ind_filepath = os.path.join(self.output_path, str(k) + '.txt')
 
 
         # WARNING TEST
