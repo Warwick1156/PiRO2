@@ -15,6 +15,8 @@ class OCR:
         print("Preprocessing image...")
         image = Preprocessor.process(image)
 
+        out_image = np.zeros(image.shape)
+
         print("Splitting rows...")
         rows, processed = BoundingBoxSplitter.split_rows(image)
         print("Detected " + str(len(rows)) + " rows.")
@@ -23,23 +25,24 @@ class OCR:
 
         print("Processing rows...")
         indices = []
-        test = []
+        # test = []
         for row, coords, row_no in rows:
 
-            words, image  = WordsExtractor.extract(row, coords, row_no, image)
+            words, out_image  = WordsExtractor.extract(row, coords, row_no, out_image)
             if len(words) > 0:
-                test.append(words[-1])
+                # test.append(words[-1])
                 digits = DigitsExtractor.extract(words[-1])
             else:
                 digits = []
 
             index = ""
             for digit in digits:
-                test.append(digit)
+                # test.append(digit)
                 predicted = clf.predict(digit)
                 index += (str(predicted))
 
             indices.append(index)
 
-        # test.append(image)
-        return indices, test
+        out_image = Preprocessor.make_out_image(out_image)
+        # test.append(out_image)
+        return indices, out_image

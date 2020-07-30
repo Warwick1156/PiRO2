@@ -228,3 +228,9 @@ class Preprocessor:
         image = image[48:2265, 40:1225]  # improves row splitting and deletes some garbage rows
         return image
 
+    @staticmethod
+    def make_out_image(img):
+        out = np.zeros((2560, 1536))
+        out[48:2265, 40:1225] = img
+        return out
+
