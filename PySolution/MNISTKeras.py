@@ -9,6 +9,9 @@ from matplotlib import pyplot
 
 import numpy as np
 
+import cv2 as cv
+from DigitProcessor import DigitProcessor
+
 
 class Classifier:
     def __init__(self, model_path=None, ):
@@ -23,6 +26,13 @@ class Classifier:
         img = Classifier.scale_value(img)
         result = self.model.predict_classes(img)
         return result[0]
+
+    def predict_proba(self, img):
+        img = img.reshape(1, 28, 28, 1)
+        img = Classifier.scale_value(img)
+        result = self.model.predict(img)
+        result = [np.round(x * 100, 2) for x in result]
+        return result
 
     @staticmethod
     def create_model(conv_kernel=3, pooling_kernel=2, activation='relu', optimizer=SGD(lr=0.001, momentum=0.9)):
@@ -57,7 +67,7 @@ class Classifier:
         return to_categorical(data)
 
     @staticmethod
-    def train(model, save=True, epochs=20, batch_size=32, verbose=1):
+    def train(model, save=False, epochs=10, batch_size=32, verbose=1):
         X_train, y_train, X_test, y_test = Classifier.load_mnist()
 
         y_train = Classifier.one_hot_encode(y_train)
@@ -81,5 +91,13 @@ class Classifier:
 
 
 if __name__ == '__main__':
-    clf = Classifier('..\\model\\keras_mnist.h5')
+    clf = Classifier('../model/keras_mnist.h5')
     print('Classifier created')
+    img = cv.imread('../out/run/2_210.png', 0)
+    assert img is not None
+    print (clf.predict(img))
+    print(clf.predict_proba(img))
+    img = DigitProcessor.process(img)
+    print(clf.predict(img))
+    print(clf.predict_proba(img))
+

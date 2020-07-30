@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a6f5e6f-aa03-4a4d-890d-97c85a7e54cc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PySolution/DigitProcessor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/DigitsExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/DigitsExtractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/MNISTKeras.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/MNISTKeras.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PySolution/OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/OCR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PySolution/Preprocessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/Preprocessor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PySolution/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/WordsExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/WordsExtractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run">
+  <component name="RunManager" selected="Python.MNISTKeras">
     <configuration name="MNISTKeras" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PiRO2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,7 +104,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PySolution/run.py" />
-      <option name="PARAMETERS" value="../data/ 29 ../out/" />
+      <option name="PARAMETERS" value="../data/ 5 ../out/run/" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -118,9 +119,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.MNISTKeras" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python.Test" />
-        <item itemvalue="Python.MNISTKeras" />
       </list>
     </recent_temporary>
   </component>
@@ -179,5 +180,16 @@
     <state x="4288" y="647" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
     <state x="3773" y="127" width="1467" height="1213" key="dock-window-1" />
     <state x="3773" y="127" width="1467" height="1213" key="dock-window-1/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PySolution/MNISTKeras.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

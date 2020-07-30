@@ -30,13 +30,16 @@ class OCR:
             words  = WordsExtractor.extract(row)
             digits = DigitsExtractor.extract(words)
 
-            for w in words:
-                test.append(w)
+            # for w in words:
+            #     test.append(w)
 
             index = []
             for digit in digits:
                 predicted = clf.predict(digit)
                 index.append(predicted)
+
+            for d in digits:
+                test.append(d)
 
             indices.append(index)
 
@@ -44,4 +47,4 @@ class OCR:
 
         indices = ["123"]
 
-        return indices, rows
+        return indices, test

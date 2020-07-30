@@ -14,7 +14,7 @@ class DigitsExtractor:
         # words are in reverse order, so first element is the last word
         # we assume that the 2 first words are name & surname, so we skip it
         # for word in words_list[:-2]:
-        for word in words_list[:-2]:
+        for word in words_list:
             word_copy = word.copy()
             word_copy = Preprocessor.erode(word_copy, 4)
             word_copy = Preprocessor.dilate(word_copy, kernel=kernel_rect)
