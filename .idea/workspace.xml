@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2a6f5e6f-aa03-4a4d-890d-97c85a7e54cc" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/PySolution/DigitProcessor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PySolution/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PiRO2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PiRO2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/DigitsExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/DigitsExtractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/MNISTKeras.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/MNISTKeras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/OCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/Preprocessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/Preprocessor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/keras_mnist.h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/keras_mnist.h5" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,18 +33,6 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.MNISTKeras">
     <configuration name="MNISTKeras" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -114,8 +100,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.MNISTKeras" />
-      <item itemvalue="Python.run" />
       <item itemvalue="Python.Test" />
+      <item itemvalue="Python.run" />
     </list>
     <recent_temporary>
       <list>
@@ -143,13 +129,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="3974" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog" />

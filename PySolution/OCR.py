@@ -8,8 +8,7 @@ from DigitsExtractor import *
 class OCR:
 
     def __init__(self):
-        self.words_detector = None
-        self.digits_extractor = None
+        pass
 
     def process_image(self, image):
 
@@ -17,34 +16,33 @@ class OCR:
         image = Preprocessor.process(image)
 
         print("Splitting rows...")
-        rows, image_orig = BoundingBoxSplitter.split_rows(image)
+        rows, processed = BoundingBoxSplitter.split_rows(image)
         print("Detected " + str(len(rows)) + " rows.")
-
 
         clf = Classifier("../model/keras_mnist.h5")
 
         print("Processing rows...")
         indices = []
         test = []
-        for row in rows:
-            words  = WordsExtractor.extract(row)
-            digits = DigitsExtractor.extract(words)
+        for row, coords, row_no in rows:
 
-            # for w in words:
-            #     test.append(w)
+            words, image  = WordsExtractor.extract(row, coords, row_no, image)
+            if len(words) > 0:
+                test.append(words[-1])
+                digits = DigitsExtractor.extract(words[-1])
+            else:
+                digits = []
 
-            index = []
+            index = ""
             for digit in digits:
+                test.append(digit)
                 predicted = clf.predict(digit)
-                index.append(predicted)
+                index += (str(predicted))
 
             for d in digits:
                 test.append(d)
 
             indices.append(index)
 
-        dummy_image = np.zeros((64, 64))
-
-        indices = ["123"]
-
+        # test.append(image)
         return indices, test

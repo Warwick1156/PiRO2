@@ -5,11 +5,11 @@ from Preprocessor import *
 class WordsExtractor:
 
     @staticmethod
-    def extract(row_image):
+    def extract(row_image, row_coords, row_no, image):
         x, y = row_image.shape
-        kx, ky = (64, 24)
-        x = x if x < kx else kx
-        y = y if y < ky else ky
+        kx, ky = (48, 32) # kx, ky = (64, 24)
+        x = (x if x < kx else kx) - 4
+        y = (y if y < ky else ky) - 4
         rect_kernel_size = x, y
 
         kernel_rect = cv.getStructuringElement(cv.MORPH_RECT, rect_kernel_size)
@@ -21,11 +21,12 @@ class WordsExtractor:
 
         img_copy = Preprocessor.erode(img_copy, 2)
         img_copy = Preprocessor.dilate(img_copy, kernel=kernel_rect)
-        contours, _ = cv.findContours(img_copy, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+        contours, _ = cv.findContours(img_copy, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
 
         words = []
 
         row_image_cpy = row_image.copy()
+        image = image.copy().astype('uint8')
 
         for i, c in enumerate(contours):
             boundRect = cv.boundingRect(c)
@@ -39,11 +40,12 @@ class WordsExtractor:
             marginY = 1
 
             if width > (rect_kernel_size[0] + marginX) and height > (rect_kernel_size[1] + marginY):
-                cv.rectangle(row_image_cpy, (int(boundRect[0]), int(boundRect[1])), \
-                    (int(boundRect[0]+boundRect[2]), int(boundRect[1]+boundRect[3])), (127,127,127), 1)
+                cv.rectangle(image, (int(row_coords[0] + boundRect[0] + 8), int(row_coords[1] + boundRect[1] + 8)),
+                    (int(row_coords[0] + boundRect[0]+boundRect[2]-16), int(row_coords[1] + boundRect[1]+boundRect[3]-16)), (row_no,row_no,row_no), -1)
 
                 word = row_image[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
-                words.append(word)
+                words.append((boundRect[0], word))
 
-        return [row_image_cpy]
-        return words
+        words = sorted(words, key=lambda x: x[0])
+        words = [w[1] for w in words]
+        return words, image

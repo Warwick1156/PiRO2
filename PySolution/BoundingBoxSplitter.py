@@ -30,6 +30,8 @@ class BoundingBoxSplitter:
 
         image = image_orig.copy()
         image_orig_2 = image_orig.copy()
+        image_orig = image_orig.copy()
+
 
         image = Preprocessor.erode(image, 4)
         image = Preprocessor.dilate(image, 6)
@@ -37,34 +39,38 @@ class BoundingBoxSplitter:
         # image = Preprocessor.dilate(image, 4)
         # image = Preprocessor.erode(image, 4)
 
-
-
-        rect_kernel_size = (int(image_orig.shape[1]/3), 8)
+        rect_kernel_size = (int(image_orig.shape[1]/3), 4)
 
         kernel_rect = cv.getStructuringElement(cv.MORPH_RECT, rect_kernel_size)
         image = Preprocessor.dilate(image, kernel=kernel_rect)
 
-        contours, _ = cv.findContours(image, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+        contours, _ = cv.findContours(image, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
 
         rows = []
+        i=1
+        contours.reverse()
         for c in contours:
-            c = cv.convexHull(c)
+            # c = cv.convexHull(c)
             boundRect = cv.boundingRect(c)
             x = boundRect[0]
             y = boundRect[1]
             width  = boundRect[2]
             height = boundRect[3]
 
-            marginX = 10
-            marginY = 5
+            marginX = 0
+            marginY = 0
 
             if width > (rect_kernel_size[0] + marginX) and height > (rect_kernel_size[1] + marginY):
-                cv.rectangle(image_orig_2, (int(boundRect[0]), int(boundRect[1])), \
-                    (int(boundRect[0]+boundRect[2]), int(boundRect[1]+boundRect[3])), (127,127,127), 2)
+                cv.rectangle(image_orig_2, (int(boundRect[0]), int(boundRect[1])),
+                    (int(boundRect[0]+boundRect[2]), int(boundRect[1]+boundRect[3])), (i,i,i), -1)
 
-                # UNCOMMENT THIS
-                row = image_orig[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
-                rows.append(row)
+                row = (image_orig[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]]).copy()
+
+                row_coords = (int(boundRect[0]), int(boundRect[1]))
+                row_no = i
+                print(row_coords)
+                rows.append((row, row_coords, row_no))
+                i+=1
 
         return rows, image_orig_2
 
@@ -75,7 +81,6 @@ class BoundingBoxSplitter:
 
         print("Rotating text area...")
         rotated = BoundingBoxSplitter.rotate_text(area, binary_image, angle_offset)
-
         rotated = np.invert(rotated)
 
         return BoundingBoxSplitter.split(rotated)
