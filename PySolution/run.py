@@ -27,7 +27,10 @@ class PiRO2:
     def _load_image(self, k):
         suffix = '.png'
         filepath = os.path.join(self.input_path, str(k) + suffix)
-        img = Image.open(filepath)
+        # filepath = os.path.join(self.input_path, 'out' + str(17 + k) + suffix)
+        # img = cv.imread(filepath, 0)
+        img = cv.imread(filepath)
+        # img = cv.bitwise_not(img)
 
         return img
 
@@ -41,7 +44,7 @@ class PiRO2:
     def _save_result(self, k, indices, processed_img):
 
         img_filepath = os.path.join(self.output_path, str(k) + '.png')
-        ind_filepath = os.path.join(self.output_path, str(k) + '.txt')
+        # ind_filepath = os.path.join(self.output_path, str(k) + '.txt')
 
 
         # WARNING TEST
@@ -51,8 +54,8 @@ class PiRO2:
 
         # cv.imwrite(img_filepath, processed_img,)
 
-        with open(ind_filepath, "w") as f:
-            f.write("\n".join(indices))
+        # with open(ind_filepath, "w") as f:
+        #     f.write("\n".join(indices))
 
     def run(self):
         if len(sys.argv) != 4:

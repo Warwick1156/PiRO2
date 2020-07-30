@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a6f5e6f-aa03-4a4d-890d-97c85a7e54cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PySolution/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PiRO2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PiRO2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/DigitsExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/DigitsExtractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PySolution/OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/OCR.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PySolution/Preprocessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/Preprocessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PySolution/WordsExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/WordsExtractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/keras_mnist.h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/keras_mnist.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +47,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Test">
+  <component name="RunManager" selected="Python.run">
     <configuration name="MNISTKeras" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PiRO2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,7 +103,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PySolution/run.py" />
-      <option name="PARAMETERS" value="../data/ 1 ../out/" />
+      <option name="PARAMETERS" value="../data/ 29 ../out/" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -121,8 +118,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Test" />
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.Test" />
         <item itemvalue="Python.MNISTKeras" />
       </list>
     </recent_temporary>

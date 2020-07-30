@@ -44,4 +44,4 @@ class OCR:
 
         indices = ["123"]
 
-        return indices, digits
+        return indices, rows

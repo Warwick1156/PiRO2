@@ -45,5 +45,5 @@ class WordsExtractor:
                 word = row_image[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
                 words.append(word)
 
-        # return [row_image_cpy]
+        return [row_image_cpy]
         return words
