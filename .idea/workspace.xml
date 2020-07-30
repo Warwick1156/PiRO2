@@ -34,7 +34,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.MNISTKeras">
+  <component name="RunManager" selected="Python.run">
     <configuration name="MNISTKeras" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PiRO2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -78,17 +78,17 @@
       <method v="2" />
     </configuration>
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PiRO2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PySolution" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PySolution/run.py" />
       <option name="PARAMETERS" value="../data/ 5 ../out/run/" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -100,13 +100,13 @@
     </configuration>
     <list>
       <item itemvalue="Python.MNISTKeras" />
-      <item itemvalue="Python.Test" />
       <item itemvalue="Python.run" />
+      <item itemvalue="Python.Test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.MNISTKeras" />
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.MNISTKeras" />
         <item itemvalue="Python.Test" />
       </list>
     </recent_temporary>
@@ -137,34 +137,44 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="3974" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
-    <state x="3974" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state x="4178" y="323" width="666" height="819" key="#run" />
-    <state x="4178" y="323" width="666" height="819" key="#run/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state x="4299" y="490" width="495" height="484" key="FileChooserDialogImpl" />
-    <state x="4299" y="490" width="495" height="484" key="FileChooserDialogImpl/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state width="1644" height="396" key="GridCell.Tab.0.bottom" />
-    <state width="1644" height="396" key="GridCell.Tab.0.bottom/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state width="1644" height="396" key="GridCell.Tab.0.center" />
-    <state width="1644" height="396" key="GridCell.Tab.0.center/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state width="1644" height="396" key="GridCell.Tab.0.left" />
-    <state width="1644" height="396" key="GridCell.Tab.0.left/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state width="1644" height="396" key="GridCell.Tab.0.right" />
-    <state width="1644" height="396" key="GridCell.Tab.0.right/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state width="1664" height="488" key="GridCell.Tab.1.bottom" />
-    <state width="1664" height="488" key="GridCell.Tab.1.bottom/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state width="1664" height="488" key="GridCell.Tab.1.center" />
-    <state width="1664" height="488" key="GridCell.Tab.1.center/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state width="1664" height="488" key="GridCell.Tab.1.left" />
-    <state width="1664" height="488" key="GridCell.Tab.1.left/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state width="1664" height="488" key="GridCell.Tab.1.right" />
-    <state width="1664" height="488" key="GridCell.Tab.1.right/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state x="4005" y="367" key="SettingsEditor" />
-    <state x="4005" y="367" key="SettingsEditor/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state x="4288" y="647" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
-    <state x="4288" y="647" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
-    <state x="3773" y="127" width="1467" height="1213" key="dock-window-1" />
-    <state x="3773" y="127" width="1467" height="1213" key="dock-window-1/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" />
+    <state x="2492" y="305" width="666" height="854" key="#MNISTKeras" timestamp="1596127057622">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state x="2492" y="305" width="666" height="854" key="#MNISTKeras/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127057622" />
+    <state x="3974" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596127055388" />
+    <state x="3974" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state x="4178" y="323" width="666" height="819" key="#run" timestamp="1596127067754">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state x="4178" y="323" width="666" height="819" key="#run/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127067754" />
+    <state x="4299" y="490" width="495" height="484" key="FileChooserDialogImpl" timestamp="1596127055389" />
+    <state x="4299" y="490" width="495" height="484" key="FileChooserDialogImpl/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state width="1644" height="396" key="GridCell.Tab.0.bottom" timestamp="1596127055389" />
+    <state width="1644" height="396" key="GridCell.Tab.0.bottom/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state width="1644" height="396" key="GridCell.Tab.0.center" timestamp="1596127055389" />
+    <state width="1644" height="396" key="GridCell.Tab.0.center/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state width="1644" height="396" key="GridCell.Tab.0.left" timestamp="1596127055389" />
+    <state width="1644" height="396" key="GridCell.Tab.0.left/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state width="1644" height="396" key="GridCell.Tab.0.right" timestamp="1596127055389" />
+    <state width="1644" height="396" key="GridCell.Tab.0.right/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state width="1664" height="488" key="GridCell.Tab.1.bottom" timestamp="1596127055389" />
+    <state width="1664" height="488" key="GridCell.Tab.1.bottom/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state width="1664" height="488" key="GridCell.Tab.1.center" timestamp="1596127055389" />
+    <state width="1664" height="488" key="GridCell.Tab.1.center/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state width="1664" height="488" key="GridCell.Tab.1.left" timestamp="1596127055389" />
+    <state width="1664" height="488" key="GridCell.Tab.1.left/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state width="1664" height="488" key="GridCell.Tab.1.right" timestamp="1596127055389" />
+    <state width="1664" height="488" key="GridCell.Tab.1.right/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state x="4005" y="367" key="SettingsEditor" timestamp="1596127055389" />
+    <state x="4005" y="367" key="SettingsEditor/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state x="4288" y="647" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596127055389" />
+    <state x="4288" y="647" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state x="3773" y="127" width="1467" height="1213" key="dock-window-1" timestamp="1596127055389" />
+    <state x="3773" y="127" width="1467" height="1213" key="dock-window-1/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state x="2520" y="471" width="620" height="522" key="find.popup" timestamp="1596127088118">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state x="2520" y="471" width="620" height="522" key="find.popup/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127088118" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
