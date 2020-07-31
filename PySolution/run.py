@@ -16,21 +16,19 @@ class PiRO2:
 
     def _process(self, k):
         img = self._load_image(k)
-        print("Loaded image no. {}".format(k))
+        # print("Loaded image no. {}".format(k))
 
         indices, processed_img = self._process_image(img)
-        print("Processed image no. {}".format(k))
+        # print("Processed image no. {}".format(k))
 
         self._save_result(k, indices, processed_img)
-        print("Saved result of processing image no. {}\n".format(k))
+        # print("Saved result of processing image no. {}\n".format(k))
 
     def _load_image(self, k):
         suffix = '.png'
         filepath = os.path.join(self.input_path, str(k) + suffix)
-        # filepath = os.path.join(self.input_path, 'out' + str(17 + k) + suffix)
-        # img = cv.imread(filepath, 0)
+
         img = cv.imread(filepath)
-        # img = cv.bitwise_not(img)
 
         return img
 
@@ -46,17 +44,13 @@ class PiRO2:
         img_filepath = os.path.join(self.output_path, str(k) + '-wyrazy.png')
         ind_filepath = os.path.join(self.output_path, str(k) + '-indeksy.txt')
 
-
-        # WARNING TEST
-        # for i in range(len(processed_img)):
-        #     img_filepath = os.path.join(self.output_path, str(k) + "_" + str(i) + '.png')
-        #     cv.imwrite(img_filepath, processed_img[i])
-
         cv.imwrite(img_filepath, processed_img)
 
         with open(ind_filepath, "w") as f:
             if len(indices) > 0:
                 f.write("\n".join([x for x in indices if x != ""]))
+            else:
+                f.write("")
 
     def run(self):
         if len(sys.argv) != 4:
@@ -67,10 +61,10 @@ class PiRO2:
         self.n = int(self.n)
 
         for k in range(self.n):
-            # call this function concurrent
+
             self._process(k)
 
-        print("Done!")
+        # print("Done!")
 
 
 if __name__ == "__main__":

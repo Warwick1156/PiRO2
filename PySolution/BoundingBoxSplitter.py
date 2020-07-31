@@ -1,9 +1,6 @@
 import sys
 import numpy as np
 import cv2 as cv
-import cv2
-from matplotlib import pyplot as plt
-import imutils
 
 from Preprocessor import *
 
@@ -26,7 +23,7 @@ class BoundingBoxSplitter:
 
     @staticmethod
     def split(image_orig):
-        print("Detecting rows with boundary boxes...")
+        # print("Detecting rows with boundary boxes...")
 
         image = image_orig.copy()
         image_orig_2 = image_orig.copy()
@@ -75,11 +72,11 @@ class BoundingBoxSplitter:
 
     @staticmethod
     def split_rows(binary_image, angle_offset=90):
-        print("Getting text area...")
-        area = BoundingBoxSplitter.get_text_area(binary_image)
+        # print("Getting text area...")
+        # area = BoundingBoxSplitter.get_text_area(binary_image)
 
-        print("Rotating text area...")
-        rotated = BoundingBoxSplitter.rotate_text(area, binary_image, angle_offset)
-        rotated = np.invert(rotated)
+        # print("Rotating text area...")
+        # rotated = BoundingBoxSplitter.rotate_text(area, binary_image, angle_offset)
+        rotated = np.invert(binary_image)
 
         return BoundingBoxSplitter.split(rotated)

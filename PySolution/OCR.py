@@ -12,18 +12,18 @@ class OCR:
 
     def process_image(self, image):
 
-        print("Preprocessing image...")
+        # print("Preprocessing image...")
         image = Preprocessor.process(image)
 
         out_image = np.zeros(image.shape)
 
-        print("Splitting rows...")
+        # print("Splitting rows...")
         rows, processed = BoundingBoxSplitter.split_rows(image)
-        print("Detected " + str(len(rows)) + " rows.")
+        # print("Detected " + str(len(rows)) + " rows.")
 
         clf = Classifier("../model/keras_piro.h5")
 
-        print("Processing rows...")
+        # print("Processing rows...")
         indices = []
         # test = []
         for row, coords, row_no in rows:
@@ -31,7 +31,7 @@ class OCR:
             words, out_image  = WordsExtractor.extract(row, coords, row_no, out_image)
             if len(words) > 0:
                 # test.append(words[-1])
-                digits = DigitsExtractor.extract(words[-1])
+                digits = DigitsExtractor.extract(words)
             else:
                 digits = []
 

@@ -79,9 +79,6 @@ class RowSplitter:
 
         print("Rotating text area...")
         rotated = RowSplitter.rotate_text(aera, binary_image, angle_offset)
-        cv2.imshow("", rotated)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
 
         orig_image_rotated = RowSplitter.rotate_text(aera, orig_image)
         rotated = np.invert(rotated)

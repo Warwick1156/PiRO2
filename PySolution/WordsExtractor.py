@@ -25,7 +25,7 @@ class WordsExtractor:
 
         words = []
 
-        row_image_cpy = row_image.copy()
+        # row_image_cpy = row_image.copy()
         image = image.copy().astype('uint8')
 
         for i, c in enumerate(contours):

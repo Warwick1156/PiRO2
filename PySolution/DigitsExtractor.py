@@ -6,24 +6,22 @@ from Preprocessor import *
 class DigitsExtractor:
 
     @staticmethod
-    def extract(word):
-        if word is None:
+    def extract(words):
+        if words == []:
             return []
-
-        x, y = word.shape
-        kx, ky = (8, 16)
-        x = (x if x < kx else kx) - 2
-        y = (y if y < ky else ky) - 2
-        rect_kernel_size = x, y
-
-        kernel_rect = cv.getStructuringElement(cv.MORPH_RECT, rect_kernel_size)
 
         digits = []
 
-        # words are in reverse order, so first element is the last word
-        # we assume that the 2 first words are name & surname, so we skip it
+        for word in [words[-1]]:
 
-        for word in [word]:
+            x, y = word.shape
+            kx, ky = (8, 16)
+            x = (x if x < kx else kx) - 2
+            y = (y if y < ky else ky) - 2
+            rect_kernel_size = x, y
+
+            kernel_rect = cv.getStructuringElement(cv.MORPH_RECT, rect_kernel_size)
+
             word_copy = word.copy()
             word_copy = Preprocessor.erode(word_copy, 2)
             word_copy = Preprocessor.dilate(word_copy, kernel=kernel_rect)
@@ -41,8 +39,6 @@ class DigitsExtractor:
                 marginY = 0
                 rect_kernel_size = kernel_rect.shape
                 if width > (rect_kernel_size[0] + marginX) and height > (rect_kernel_size[1] + marginY):
-                    #             cv.rectangle(row_test, (int(boundRect[0]), int(boundRect[1])), \
-                    #                 (int(boundRect[0]+boundRect[2]), int(boundRect[1]+boundRect[3])), (127,127,127), 1)
 
                     digit = word[boundRect[1]:boundRect[1] + boundRect[3], boundRect[0]:boundRect[0] + boundRect[2]].copy()
                     digits.append((boundRect[0], digit))
