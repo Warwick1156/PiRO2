@@ -3,5 +3,5 @@
 package_name=130759_131846
 
 cd deploy
-zip $package_name.zip $package_name.pdf emails.txt environment.yml run.py
+zip -r $package_name.zip *
 mv $package_name.zip ../
