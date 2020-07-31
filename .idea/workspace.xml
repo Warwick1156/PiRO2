@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a6f5e6f-aa03-4a4d-890d-97c85a7e54cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PySolution/PiroDataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/keras_piro.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PiRO2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PiRO2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySolution/MNISTKeras.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/MNISTKeras.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/BoundingBoxSplitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/BoundingBoxSplitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/DigitsExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/DigitsExtractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/OCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/OCR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/RowSplitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/RowSplitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/WordsExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/WordsExtractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySolution/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/PySolution/run.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,19 +36,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RunManager" selected="Python.run">
     <configuration name="MNISTKeras" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -115,13 +109,13 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Python-3.8.2/python" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PySolution" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PySolution/run.py" />
-      <option name="PARAMETERS" value="../data/ 30 ../out/run/" />
+      <option name="PARAMETERS" value="../data/ 30 ../out/" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -137,9 +131,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run" />
         <item itemvalue="Python.MNISTKeras" />
         <item itemvalue="Python.PiroDataset" />
-        <item itemvalue="Python.run" />
         <item itemvalue="Python.Test" />
       </list>
     </recent_temporary>
@@ -162,35 +156,48 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2492" y="305" width="666" height="854" key="#MNISTKeras" timestamp="1596127057622">
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
     <state x="2492" y="305" width="666" height="854" key="#MNISTKeras/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127057622" />
-    <state x="3974" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596127055388" />
-    <state x="3974" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state x="3974" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596219070341">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state x="3974" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596219070341" />
     <state x="4178" y="323" width="666" height="819" key="#run" timestamp="1596127067754">
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
     <state x="4178" y="323" width="666" height="819" key="#run/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127067754" />
     <state x="4299" y="490" width="495" height="484" key="FileChooserDialogImpl" timestamp="1596127055389" />
     <state x="4299" y="490" width="495" height="484" key="FileChooserDialogImpl/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
-    <state width="1644" height="396" key="GridCell.Tab.0.bottom" timestamp="1596127055389" />
-    <state width="1644" height="396" key="GridCell.Tab.0.bottom/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
-    <state width="1644" height="396" key="GridCell.Tab.0.center" timestamp="1596127055389" />
-    <state width="1644" height="396" key="GridCell.Tab.0.center/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
-    <state width="1644" height="396" key="GridCell.Tab.0.left" timestamp="1596127055389" />
-    <state width="1644" height="396" key="GridCell.Tab.0.left/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
-    <state width="1644" height="396" key="GridCell.Tab.0.right" timestamp="1596127055389" />
-    <state width="1644" height="396" key="GridCell.Tab.0.right/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state width="3350" height="587" key="GridCell.Tab.0.bottom" timestamp="1596219806621">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state width="1897" height="145" key="GridCell.Tab.0.bottom/1920.0.3440.1440/0.27.1920.1053@0.27.1920.1053" timestamp="1596143753617" />
+    <state width="3350" height="587" key="GridCell.Tab.0.bottom/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596219806621" />
+    <state width="3350" height="587" key="GridCell.Tab.0.center" timestamp="1596219806621">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state width="1897" height="145" key="GridCell.Tab.0.center/1920.0.3440.1440/0.27.1920.1053@0.27.1920.1053" timestamp="1596143753617" />
+    <state width="3350" height="587" key="GridCell.Tab.0.center/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596219806621" />
+    <state width="3350" height="587" key="GridCell.Tab.0.left" timestamp="1596219806621">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state width="1897" height="145" key="GridCell.Tab.0.left/1920.0.3440.1440/0.27.1920.1053@0.27.1920.1053" timestamp="1596143753617" />
+    <state width="3350" height="587" key="GridCell.Tab.0.left/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596219806621" />
+    <state width="3350" height="587" key="GridCell.Tab.0.right" timestamp="1596219806621">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state width="1897" height="145" key="GridCell.Tab.0.right/1920.0.3440.1440/0.27.1920.1053@0.27.1920.1053" timestamp="1596143753617" />
+    <state width="3350" height="587" key="GridCell.Tab.0.right/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596219806621" />
     <state width="1664" height="488" key="GridCell.Tab.1.bottom" timestamp="1596127055389" />
     <state width="1664" height="488" key="GridCell.Tab.1.bottom/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
     <state width="1664" height="488" key="GridCell.Tab.1.center" timestamp="1596127055389" />
@@ -199,26 +206,17 @@
     <state width="1664" height="488" key="GridCell.Tab.1.left/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
     <state width="1664" height="488" key="GridCell.Tab.1.right" timestamp="1596127055389" />
     <state width="1664" height="488" key="GridCell.Tab.1.right/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
-    <state x="4005" y="367" key="SettingsEditor" timestamp="1596127055389" />
-    <state x="4005" y="367" key="SettingsEditor/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
+    <state x="4005" y="367" key="SettingsEditor" timestamp="1596217023033">
+      <screen x="1920" y="0" width="3440" height="1440" />
+    </state>
+    <state x="4005" y="367" key="SettingsEditor/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596217023033" />
     <state x="4288" y="647" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596127055389" />
     <state x="4288" y="647" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
     <state x="3773" y="127" width="1467" height="1213" key="dock-window-1" timestamp="1596127055389" />
     <state x="3773" y="127" width="1467" height="1213" key="dock-window-1/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127055389" />
-    <state x="2520" y="471" width="620" height="522" key="find.popup" timestamp="1596127088118">
+    <state x="2520" y="471" width="620" height="522" key="find.popup" timestamp="1596139743116">
       <screen x="1920" y="0" width="3440" height="1440" />
     </state>
-    <state x="2520" y="471" width="620" height="522" key="find.popup/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596127088118" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PySolution/MNISTKeras.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="2520" y="471" width="620" height="522" key="find.popup/1920.0.3440.1440/0.27.1920.1053@1920.0.3440.1440" timestamp="1596139743116" />
   </component>
 </project>
