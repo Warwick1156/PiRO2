@@ -11,7 +11,7 @@ class DigitsExtractor:
             return []
 
         x, y = word.shape
-        kx, ky = (3, 16)
+        kx, ky = (8, 16)
         x = (x if x < kx else kx) - 2
         y = (y if y < ky else ky) - 2
         rect_kernel_size = x, y
@@ -56,7 +56,7 @@ class DigitsExtractor:
     def place_in_center(img):
         img = img.astype(int)
         rows, cols = img.shape
-        new_size = rows if rows > cols else cols
+        new_size = (rows if rows > cols else cols) + 16
 
         new_image = np.zeros((new_size, new_size)).astype(int)
 

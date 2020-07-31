@@ -93,11 +93,14 @@ class Classifier:
 if __name__ == '__main__':
     clf = Classifier('../model/keras_mnist.h5')
     print('Classifier created')
-    img = cv.imread('../out/run/2_210.png', 0)
-    assert img is not None
-    print (clf.predict(img))
-    print(clf.predict_proba(img))
-    img = DigitProcessor.process(img)
-    print(clf.predict(img))
-    print(clf.predict_proba(img))
+    # img = cv.imread('../out/run/2_210.png', 0)
+    # assert img is not None
+    # print (clf.predict(img))
+    # print(clf.predict_proba(img))
+    # img = DigitProcessor.process(img)
+    # print(clf.predict(img))
+    # print(clf.predict_proba(img))
+
+    a, b, c ,d = Classifier.load_mnist()
+    print(b[:12])
 
