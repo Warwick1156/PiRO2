@@ -48,4 +48,4 @@ class WordsExtractor:
 
         words = sorted(words, key=lambda x: x[0])
         words = [w[1] for w in words]
-        return words, image
+        return words, image, row_no+1 if len(words) > 0 else row_no

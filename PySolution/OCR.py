@@ -26,9 +26,10 @@ class OCR:
         # print("Processing rows...")
         indices = []
         # test = []
-        for row, coords, row_no in rows:
+        row_no = 1
+        for row, coords, _ in rows:
 
-            words, out_image  = WordsExtractor.extract(row, coords, row_no, out_image)
+            words, out_image, row_no  = WordsExtractor.extract(row, coords, row_no, out_image)
             if len(words) > 0:
                 # test.append(words[-1])
                 digits = DigitsExtractor.extract(words)
