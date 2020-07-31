@@ -19,7 +19,7 @@ class OCR:
         rows, processed = BoundingBoxSplitter.split_rows(image)
         print("Detected " + str(len(rows)) + " rows.")
 
-        clf = Classifier("../model/keras_mnist.h5")
+        clf = Classifier("../model/keras_piro.h5")
 
         print("Processing rows...")
         indices = []

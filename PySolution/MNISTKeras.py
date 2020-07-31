@@ -11,6 +11,7 @@ import numpy as np
 
 import cv2 as cv
 from DigitProcessor import DigitProcessor
+from PiroDataset import Piro
 
 
 class Classifier:
@@ -19,7 +20,11 @@ class Classifier:
             self.model = load_model(model_path)
         except IOError:
             self.model = Classifier.create_model()
-            self.model = Classifier.train(self.model)
+            self.model = Classifier.train_mnist(self.model)
+            try:
+                self.model = Classifier.train_piro(self.model, epochs=20)
+            except:
+                pass
 
     def predict(self, img):
         img = img.reshape(1, 28, 28, 1)
@@ -67,7 +72,7 @@ class Classifier:
         return to_categorical(data)
 
     @staticmethod
-    def train(model, save=False, epochs=10, batch_size=32, verbose=1):
+    def train_mnist(model, save=False, epochs=10, batch_size=32, verbose=1):
         X_train, y_train, X_test, y_test = Classifier.load_mnist()
 
         y_train = Classifier.one_hot_encode(y_train)
@@ -85,6 +90,21 @@ class Classifier:
         return model
 
     @staticmethod
+    def train_piro(model, save=False, epochs=10, batch_size=32, verbose=1):
+        X_train, X_test, y_train, y_test = Piro.load_data()
+
+        X_train = Classifier.scale_value(X_train)
+        X_test = Classifier.scale_value(X_test)
+
+        model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=verbose)
+        Classifier.evaluate(model, X_test, y_test)
+
+        if save:
+            model.save('../model/keras_piro.h5')
+
+        return model
+
+    @staticmethod
     def evaluate(model, X, y, verbose=1):
         _, acc = model.evaluate(X, y, verbose)
         print('> %.3f' % (acc * 100.0))
@@ -93,14 +113,13 @@ class Classifier:
 if __name__ == '__main__':
     clf = Classifier('../model/keras_mnist.h5')
     print('Classifier created')
-    # img = cv.imread('../out/run/2_210.png', 0)
-    # assert img is not None
-    # print (clf.predict(img))
-    # print(clf.predict_proba(img))
-    # img = DigitProcessor.process(img)
-    # print(clf.predict(img))
-    # print(clf.predict_proba(img))
 
-    a, b, c ,d = Classifier.load_mnist()
-    print(b[:12])
+    X_train, X_test, y_train, y_test = Piro.load_data()
+
+    X_train = Classifier.scale_value(X_train)
+    X_test = Classifier.scale_value(X_test)
+
+    Classifier.evaluate(clf.model, X_test, y_test)
+    Classifier.train_piro(clf.model, epochs=19, save=True)
+
 
